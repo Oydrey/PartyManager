@@ -4,15 +4,128 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fffff0"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="Mes évènements"
+        android:textColor="@android:color/black"
+        android:textSize="24dp"
+        android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.15" />
+
+    <Button
+        android:id="@+id/button15"
+        android:layout_width="421dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="80dp"
+        android:background="#fffefa"
+        android:onClick="goEventActivity"
+
+
+        android:shadowColor="@android:color/black"
+        android:text="Chez momo"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="18dp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.171" />
+
+    <Button
+        android:id="@+id/button16"
+        android:layout_width="421dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="80dp"
+        android:background="#fffefa"
+        android:onClick="goEventActivity"
+
+        android:text="La réu des vrais"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="18dp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.338" />
+
+    <Button
+        android:id="@+id/button17"
+        android:layout_width="421dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="80dp"
+        android:background="#fffefa"
+        android:onClick="goEventActivity"
+
+        android:text="Soiré mousse de Goran"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="18dp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.509" />
+
+    <Button
+        android:id="@+id/button18"
+        android:layout_width="421dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="80dp"
+        android:background="#fffefa"
+        android:onClick="goEventActivity"
+
+        android:text="Soiré shooter Oeil"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="18dp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.681" />
+
+    <Button
+        android:id="@+id/button19"
+        android:layout_width="421dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="80dp"
+        android:background="#fffefa"
+
+        android:onClick="goEventActivity"
+        android:text="Before chez Chichi"
+        android:textColor="@android:color/holo_purple"
+        android:textSize="18dp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.86" />
+
+    <Button
+        android:id="@+id/button23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:onClick="goEventCreateActivity"
+        android:text="Créer un évènement"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.038" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
