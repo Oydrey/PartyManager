@@ -1,7 +1,10 @@
 package com.oydreyproduction.partymanager;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.database.Cursor;
+import android.util.Log;
+import android.widget.Toast;
 
 public class SoireeDAO extends DAOBase {
 
@@ -24,7 +27,13 @@ public class SoireeDAO extends DAOBase {
 
     public static final String TABLE_DROP_SOIREE = "DROP TABLE IF EXISTS " + TABLE_SOIREE + ";";
 
+    public SoireeDAO(Context context){
+        this.baseSQLite = new BaseSQLite(context, NOM, null, VERSION);
+    }
+
     public void ajouter(Soiree soiree){
+
+
         ContentValues values = new ContentValues();
         values.put(SoireeDAO.COL_NOM_SOIREE, soiree.getNom());
         values.put(SoireeDAO.COL_LIEU, soiree.getLieu());
@@ -35,7 +44,7 @@ public class SoireeDAO extends DAOBase {
     }
 
     public void supprimer(int id){
-        mDb.delete(TABLE_SOIREE, COL_ID_SOIREE + " = ?", new String[] {String.valueOf(id)});
+        mDb.delete(TABLE_SOIREE, COL_ID_SOIREE + " = " + id, null);
     }
 
     public void modifier(Soiree soiree){
@@ -45,12 +54,12 @@ public class SoireeDAO extends DAOBase {
         values.put(COL_DATE, soiree.getDate());
         values.put(COL_HEURE, soiree.getHeure());
         values.put(COL_DESCRIPTION, soiree.getDescription());
-        mDb.update(TABLE_SOIREE, values, COL_ID_SOIREE + " = ?", new String[] {String.valueOf(soiree.getId())});
+        mDb.update(TABLE_SOIREE, values, COL_ID_SOIREE + " = " + soiree.getId(), null);
     }
 
     public Soiree selectionnerSoireeByID(int id){
         Cursor c = mDb.rawQuery("select " + COL_NOM_SOIREE + ", " + COL_LIEU + ", " + COL_DATE +
-                ", " + COL_HEURE + ", " + COL_DESCRIPTION + " from " + TABLE_SOIREE + " where " + COL_ID_SOIREE + " = ?", new String[] {String.valueOf(id)});
+                ", " + COL_HEURE + ", " + COL_DESCRIPTION + " from " + TABLE_SOIREE + " where " + COL_ID_SOIREE + " = " + id, null);
         String nom = c.getString(0);
         String lieu = c.getString(1);
         String date = c.getString(2);

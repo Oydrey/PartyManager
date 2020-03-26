@@ -2,6 +2,7 @@ package com.oydreyproduction.partymanager;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 public abstract class DAOBase {
 
@@ -11,16 +12,10 @@ public abstract class DAOBase {
     protected SQLiteDatabase mDb = null;
     protected BaseSQLite baseSQLite = null;
 
-    public DAOBase(){
-
-    }
-
-    public DAOBase(Context context){
-        this.baseSQLite = new BaseSQLite(context, NOM, null, VERSION);
-    }
-
     public SQLiteDatabase open(){
+        Log.v("Je suis la", "open");
         mDb = baseSQLite.getWritableDatabase();
+        Log.v("Je suis la", "apres getWritableDatabase");
         return mDb;
     }
 

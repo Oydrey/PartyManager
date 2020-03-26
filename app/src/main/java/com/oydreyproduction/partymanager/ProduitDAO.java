@@ -1,6 +1,7 @@
 package com.oydreyproduction.partymanager;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.database.Cursor;
 
 public class ProduitDAO extends DAOBase {
@@ -20,6 +21,10 @@ public class ProduitDAO extends DAOBase {
 
     public static final String TABLE_DROP_PRODUIT = "DROP TABLE IF EXISTS " + TABLE_PRODUIT + ";";
 
+    public ProduitDAO(Context context){
+        this.baseSQLite = new BaseSQLite(context, NOM, null, VERSION);
+    }
+
     public void ajouter(Produit produit){
         ContentValues values = new ContentValues();
         values.put(ProduitDAO.COL_NOM_PRODUIT, produit.getNom());
@@ -29,7 +34,7 @@ public class ProduitDAO extends DAOBase {
     }
 
     public void supprimer(int id){
-        mDb.delete(TABLE_PRODUIT, COL_ID_PRODUIT + " = ?", new String[] {String.valueOf(id)});
+        mDb.delete(TABLE_PRODUIT, COL_ID_PRODUIT + " = " + id, null);
     }
 
     public void modifier(Produit produit){
@@ -37,12 +42,12 @@ public class ProduitDAO extends DAOBase {
         values.put(COL_NOM_PRODUIT, produit.getNom());
         values.put(COL_QTE_NECESSAIRE, produit.getQteNecessaire());
         values.put(COL_QTE_ACHETEE, produit.getQteAchetee());
-        mDb.update(TABLE_PRODUIT, values, COL_ID_PRODUIT + " = ?", new String[] {String.valueOf(produit.getId())});
+        mDb.update(TABLE_PRODUIT, values, COL_ID_PRODUIT + " = " + produit.getId(), null);
     }
 
     public Produit selectionnerProduitByID(int id){
         Cursor c = mDb.rawQuery("select " + COL_NOM_PRODUIT + ", " + COL_QTE_NECESSAIRE + ", " + COL_QTE_ACHETEE +
-                " from " + TABLE_PRODUIT + " where " + COL_ID_PRODUIT + " = ?", new String[] {String.valueOf(id)});
+                " from " + TABLE_PRODUIT + " where " + COL_ID_PRODUIT + " = " + id, null);
         String nom = c.getString(0);
         int qteNecessaire = c.getInt(1);
         int qteAchetee = c.getInt(2);

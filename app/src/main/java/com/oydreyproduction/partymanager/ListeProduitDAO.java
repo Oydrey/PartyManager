@@ -1,6 +1,7 @@
 package com.oydreyproduction.partymanager;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.database.Cursor;
 
 public class ListeProduitDAO extends DAOBase {
@@ -19,6 +20,10 @@ public class ListeProduitDAO extends DAOBase {
 
     public static final String TABLE_DROP_LISTE_PRODUIT = "DROP TABLE IF EXISTS " + TABLE_LISTE_PRODUIT + ";";
 
+    public ListeProduitDAO(Context context){
+        this.baseSQLite = new BaseSQLite(context, NOM, null, VERSION);
+    }
+
     public void ajouter(ListeProduit listeProduit){
         ContentValues values = new ContentValues();
         values.put(ListeProduitDAO.COL_FKR_ID_PRODUIT, listeProduit.getIdProduit());
@@ -27,19 +32,19 @@ public class ListeProduitDAO extends DAOBase {
     }
 
     public void supprimer(int idSoiree, int idProduit){
-        mDb.delete(TABLE_LISTE_PRODUIT, COL_FKR_ID_PRODUIT + " = ? AND " + COL_FKR_ID_SOIREE + " = ?", new String[] {String.valueOf(idProduit), String.valueOf(idSoiree)});
+        mDb.delete(TABLE_LISTE_PRODUIT, COL_FKR_ID_PRODUIT + " = " + idProduit + " AND " + COL_FKR_ID_SOIREE + " = " + idSoiree, null);
     }
 
     public void modifier(ListeProduit listeProduit){
         ContentValues values = new ContentValues();
         values.put(COL_FKR_ID_PRODUIT, listeProduit.getIdProduit());
         values.put(COL_FKR_ID_SOIREE, listeProduit.getIdSoiree());
-        mDb.update(TABLE_LISTE_PRODUIT, values, COL_FKR_ID_PRODUIT + " = ? AND " + COL_FKR_ID_SOIREE + " = ?", new String[] {String.valueOf(listeProduit.getIdProduit()), String.valueOf(listeProduit.getIdSoiree())});
+        mDb.update(TABLE_LISTE_PRODUIT, values, COL_FKR_ID_PRODUIT + " = " + listeProduit.getIdProduit() + " AND " + COL_FKR_ID_SOIREE + " = " + listeProduit.getIdSoiree(), null);
     }
 
     public ListeProduit[] selectionnerListeProduitByIDSoiree(int idSoiree){
         Cursor c = mDb.rawQuery("select " + COL_FKR_ID_PRODUIT + " from " + TABLE_LISTE_PRODUIT +
-                " where " + COL_FKR_ID_SOIREE + " = ?", new String[] {String.valueOf(idSoiree)});
+                " where " + COL_FKR_ID_SOIREE + " = " + idSoiree, null);
         int[] idProduit = new int[10];
         int i=0;
         for(c.moveToFirst(); !c.isAfterLast(); c.moveToNext()){
