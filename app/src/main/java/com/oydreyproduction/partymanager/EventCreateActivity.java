@@ -81,21 +81,6 @@ public class EventCreateActivity extends AppCompatActivity {
         String strProduit9 = produit9.getText().toString();
         String strProduit10 = produit10.getText().toString();
 
-        PartyManagerBDD partyManagerBDD = new PartyManagerBDD(this);
-        partyManagerBDD.open();
-
-        Soiree soiree = new Soiree(strNomSOiree, strLieuSoiree, strDateSoiree, strHeureSoiree, strDescSoiree);
-        partyManagerBDD.insertSoiree(soiree);
-        int idSoiree = partyManagerBDD.getSoireeWithNom(strNomSOiree).getId();
-        String[] produits = {strProduit1, strProduit2, strProduit3, strProduit4, strProduit5, strProduit6, strProduit7, strProduit8, strProduit9, strProduit10};
-        for (String str : produits){
-            if(!str.equals("")){
-                partyManagerBDD.insertProduit(new Produit(str, 1));
-                int idProduit = partyManagerBDD.getProduitWithNom(str).getId();
-                ListeProduit listeProduit = new ListeProduit(idProduit, idSoiree);
-                partyManagerBDD.insertListeProduit(listeProduit);
-            }
-        }
 
         // redirection main
         Intent intent = new Intent(this,MainActivity.class);
