@@ -16,8 +16,6 @@ public class MainActivity extends AppCompatActivity {
     Button button18;
     Button button19;
 
-    DAOBase daoBase;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,15 +26,6 @@ public class MainActivity extends AppCompatActivity {
         button17 = findViewById(R.id.button17);
         button18 = findViewById(R.id.button18);
         button19 = findViewById(R.id.button19);
-
-        daoBase = new DAOBase() {
-            @Override
-            public SQLiteDatabase open() {
-                return super.open();
-            }
-        };
-
-        daoBase.close();
 
     }
 
