@@ -14,7 +14,6 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:id="@+id/relatLayBlocNavHaut"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -133,7 +132,8 @@
                     android:textColorHint="#000"
                     android:textSize="22dp"
                     tools:layout_editor_absoluteX="80dp"
-                    tools:layout_editor_absoluteY="184dp" />
+                    tools:layout_editor_absoluteY="184dp"
+                    android:inputType="numberDecimal"/>
 
                 <TextView
                     android:id="@+id/slashProduit1"
@@ -164,7 +164,8 @@
                     android:textColorHint="#000"
                     android:textSize="22dp"
                     tools:layout_editor_absoluteX="80dp"
-                    tools:layout_editor_absoluteY="184dp" />
+                    tools:layout_editor_absoluteY="184dp"
+                    android:inputType="numberDecimal"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -204,7 +205,8 @@
                     android:textColorHint="#000"
                     android:textSize="22dp"
                     tools:layout_editor_absoluteX="80dp"
-                    tools:layout_editor_absoluteY="184dp" />
+                    tools:layout_editor_absoluteY="184dp"
+                    android:inputType="numberDecimal"/>
 
                 <TextView
                     android:id="@+id/slashProduit2"
@@ -235,7 +237,8 @@
                     android:textColorHint="#000"
                     android:textSize="22dp"
                     tools:layout_editor_absoluteX="80dp"
-                    tools:layout_editor_absoluteY="184dp" />
+                    tools:layout_editor_absoluteY="184dp"
+                    android:inputType="numberDecimal"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -274,7 +277,8 @@
                     android:textColorHint="#000"
                     android:textSize="22dp"
                     tools:layout_editor_absoluteX="80dp"
-                    tools:layout_editor_absoluteY="184dp" />
+                    tools:layout_editor_absoluteY="184dp"
+                    android:inputType="numberDecimal"/>
 
                 <TextView
                     android:id="@+id/slashProduit3"
@@ -305,7 +309,8 @@
                     android:textColorHint="#000"
                     android:textSize="22dp"
                     tools:layout_editor_absoluteX="80dp"
-                    tools:layout_editor_absoluteY="184dp" />
+                    tools:layout_editor_absoluteY="184dp"
+                    android:inputType="numberDecimal"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -344,7 +349,8 @@
                     android:textColorHint="#000"
                     android:textSize="22dp"
                     tools:layout_editor_absoluteX="80dp"
-                    tools:layout_editor_absoluteY="184dp" />
+                    tools:layout_editor_absoluteY="184dp"
+                    android:inputType="numberDecimal"/>
 
                 <TextView
                     android:id="@+id/slashProduit4"
@@ -375,7 +381,8 @@
                     android:textColorHint="#000"
                     android:textSize="22dp"
                     tools:layout_editor_absoluteX="80dp"
-                    tools:layout_editor_absoluteY="184dp" />
+                    tools:layout_editor_absoluteY="184dp"
+                    android:inputType="numberDecimal"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -414,7 +421,8 @@
                     android:textColorHint="#000"
                     android:textSize="22dp"
                     tools:layout_editor_absoluteX="80dp"
-                    tools:layout_editor_absoluteY="184dp" />
+                    tools:layout_editor_absoluteY="184dp"
+                    android:inputType="numberDecimal"/>
 
                 <TextView
                     android:id="@+id/slashProduit5"
@@ -445,7 +453,8 @@
                     android:textColorHint="#000"
                     android:textSize="22dp"
                     tools:layout_editor_absoluteX="80dp"
-                    tools:layout_editor_absoluteY="184dp" />
+                    tools:layout_editor_absoluteY="184dp"
+                    android:inputType="numberDecimal"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -484,7 +493,8 @@
                     android:textColorHint="#000"
                     android:textSize="22dp"
                     tools:layout_editor_absoluteX="80dp"
-                    tools:layout_editor_absoluteY="184dp" />
+                    tools:layout_editor_absoluteY="184dp"
+                    android:inputType="numberDecimal"/>
 
                 <TextView
                     android:id="@+id/slashProduit6"
@@ -515,7 +525,8 @@
                     android:textColorHint="#000"
                     android:textSize="22dp"
                     tools:layout_editor_absoluteX="80dp"
-                    tools:layout_editor_absoluteY="184dp" />
+                    tools:layout_editor_absoluteY="184dp"
+                    android:inputType="numberDecimal"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -554,7 +565,8 @@
                     android:textColorHint="#000"
                     android:textSize="22dp"
                     tools:layout_editor_absoluteX="80dp"
-                    tools:layout_editor_absoluteY="184dp" />
+                    tools:layout_editor_absoluteY="184dp"
+                    android:inputType="numberDecimal"/>
 
                 <TextView
                     android:id="@+id/slashProduit7"
@@ -585,7 +597,8 @@
                     android:textColorHint="#000"
                     android:textSize="22dp"
                     tools:layout_editor_absoluteX="80dp"
-                    tools:layout_editor_absoluteY="184dp" />
+                    tools:layout_editor_absoluteY="184dp"
+                    android:inputType="numberDecimal"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -624,7 +637,8 @@
                     android:textColorHint="#000"
                     android:textSize="22dp"
                     tools:layout_editor_absoluteX="80dp"
-                    tools:layout_editor_absoluteY="184dp" />
+                    tools:layout_editor_absoluteY="184dp"
+                    android:inputType="numberDecimal"/>
 
                 <TextView
                     android:id="@+id/slashProduit8"
@@ -655,7 +669,8 @@
                     android:textColorHint="#000"
                     android:textSize="22dp"
                     tools:layout_editor_absoluteX="80dp"
-                    tools:layout_editor_absoluteY="184dp" />
+                    tools:layout_editor_absoluteY="184dp"
+                    android:inputType="numberDecimal"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -694,7 +709,8 @@
                     android:textColorHint="#000"
                     android:textSize="22dp"
                     tools:layout_editor_absoluteX="80dp"
-                    tools:layout_editor_absoluteY="184dp" />
+                    tools:layout_editor_absoluteY="184dp"
+                    android:inputType="numberDecimal"/>
 
                 <TextView
                     android:id="@+id/slashProduit9"
@@ -725,7 +741,8 @@
                     android:textColorHint="#000"
                     android:textSize="22dp"
                     tools:layout_editor_absoluteX="80dp"
-                    tools:layout_editor_absoluteY="184dp" />
+                    tools:layout_editor_absoluteY="184dp"
+                    android:inputType="numberDecimal"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -764,7 +781,8 @@
                     android:textColorHint="#000"
                     android:textSize="22dp"
                     tools:layout_editor_absoluteX="80dp"
-                    tools:layout_editor_absoluteY="184dp" />
+                    tools:layout_editor_absoluteY="184dp"
+                    android:inputType="numberDecimal"/>
 
                 <TextView
                     android:id="@+id/slashProduit10"
@@ -795,7 +813,8 @@
                     android:textColorHint="#000"
                     android:textSize="22dp"
                     tools:layout_editor_absoluteX="80dp"
-                    tools:layout_editor_absoluteY="184dp" />
+                    tools:layout_editor_absoluteY="184dp"
+                    android:inputType="numberDecimal"/>
 
             </RelativeLayout>
 

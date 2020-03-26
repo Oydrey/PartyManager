@@ -7,90 +7,415 @@
     android:background="#fffff0"
     tools:context=".SellierActivity">
 
-    <TextView
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/textViewEvenement"
+        tools:layout_editor_absoluteX="0dp">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="left"
+        android:padding="10dip">
+
+        <TextView
+            android:id="@+id/textViewSellier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@+id/button1"
+            android:text="Objets amenés"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.049" />
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:onClick="back"
+            android:text="Retour"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.073"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.021" />
+
+        <Button
+            android:id="@+id/button12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/textViewSellier"
+            android:onClick="goMainActivity"
+            android:text="Main"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.944"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.021" />
+    </RelativeLayout>
+
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sur SellierActivity"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.049" />
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout2">
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="105dp"
-        android:layout_height="45dp"
-        android:onClick="back"
-        android:text="Retour"
+        <ImageView
+            android:layout_width="280dip"
+            android:layout_height="630dip"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="20dip"
+            android:scaleType="centerCrop"
+            android:src="@drawable/fond_sellier" />
 
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.073"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.021" />
+        <TextView
+            android:id="@+id/sellierNomProduit1"
+            android:layout_width="150dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="9dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="12dip"
+            android:text=""
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:textColor="#ffffffff" />
 
-    <Button
-        android:id="@+id/button12"
-        android:layout_width="105dp"
-        android:layout_height="45dp"
-
-        android:onClick="goMainActivity"
-        android:text="Main"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.944"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.021" />
-
-    <Button
-        android:id="@+id/button13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-
-        android:onClick="goChecklistActivity"
-        android:text="Checklist"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.073"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.993" />
-
-    <Button
-        android:id="@+id/button14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-
-        android:onClick="goEventActivity"
-        android:text="Event"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.500"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.993" />
-
-    <Button
-
-        android:id="@+id/button20"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:enabled="false"
-
-        android:text="Sellier"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.9"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.993" />
+        <TextView
+            android:id="@+id/sellierQtteProduit1"
+            android:layout_width="50dp"
+            android:layout_marginLeft="195dp"
+            android:layout_marginTop="9dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="12dip"
+            android:text=""
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:textColor="#ffffffff" />
 
 
+        <TextView
+            android:id="@+id/sellierNomProduit2"
+            android:layout_width="150dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="73dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="12dip"
+            android:text=""
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:textColor="#ffffffff" />
+
+        <TextView
+            android:id="@+id/sellierQtteProduit2"
+            android:layout_width="50dp"
+            android:layout_marginLeft="195dp"
+            android:layout_marginTop="73dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="12dip"
+            android:text=""
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:textColor="#ffffffff" />
+
+
+        <TextView
+            android:id="@+id/sellierNomProduit3"
+            android:layout_width="150dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="136dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="12dip"
+            android:text=""
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:textColor="#ffffffff" />
+
+        <TextView
+            android:id="@+id/sellierQtteProduit3"
+            android:layout_width="50dp"
+            android:layout_marginLeft="195dp"
+            android:layout_marginTop="136dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="12dip"
+            android:text=""
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:textColor="#ffffffff" />
+
+
+        <TextView
+            android:id="@+id/sellierNomProduit4"
+            android:layout_width="150dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="196dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="12dip"
+            android:text=""
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:textColor="#ffffffff" />
+
+        <TextView
+            android:id="@+id/sellierQtteProduit4"
+            android:layout_width="50dp"
+            android:layout_marginLeft="195dp"
+            android:layout_marginTop="196dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="12dip"
+            android:text=""
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:textColor="#ffffffff" />
+
+
+        <TextView
+            android:id="@+id/sellierNomProduit5"
+            android:layout_width="150dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="256dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="12dip"
+            android:text=""
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:textColor="#ffffffff" />
+
+        <TextView
+            android:id="@+id/sellierQtteProduit5"
+            android:layout_width="50dp"
+            android:layout_marginLeft="195dp"
+            android:layout_marginTop="256dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="12dip"
+            android:text=""
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:textColor="#ffffffff" />
+
+
+        <TextView
+            android:id="@+id/sellierNomProduit6"
+            android:layout_width="150dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="317dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="12dip"
+            android:text=""
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:textColor="#ffffffff" />
+
+        <TextView
+            android:id="@+id/sellierQtteProduit6"
+            android:layout_width="50dp"
+            android:layout_marginLeft="195dp"
+            android:layout_marginTop="317dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="12dip"
+            android:text=""
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:textColor="#ffffffff" />
+
+
+        <TextView
+            android:id="@+id/sellierNomProduit7"
+            android:layout_width="150dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="382dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="12dip"
+            android:text=""
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:textColor="#ffffffff" />
+
+        <TextView
+            android:id="@+id/sellierQtteProduit7"
+            android:layout_width="50dp"
+            android:layout_marginLeft="195dp"
+            android:layout_marginTop="382dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="12dip"
+            android:text=""
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:textColor="#ffffffff" />
+
+
+        <TextView
+            android:id="@+id/sellierNomProduit8"
+            android:layout_width="150dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="444dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="12dip"
+            android:text=""
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:textColor="#ffffffff" />
+
+        <TextView
+            android:id="@+id/sellierQtteProduit8"
+            android:layout_width="50dp"
+            android:layout_marginLeft="195dp"
+            android:layout_marginTop="444dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="12dip"
+            android:text=""
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:textColor="#ffffffff" />
+
+
+        <TextView
+            android:id="@+id/sellierNomProduit9"
+            android:layout_width="150dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="507dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="12dip"
+            android:text=""
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:textColor="#ffffffff" />
+
+        <TextView
+            android:id="@+id/sellierQtteProduit9"
+            android:layout_width="50dp"
+            android:layout_marginLeft="195dp"
+            android:layout_marginTop="507dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="12dip"
+            android:text=""
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:textColor="#ffffffff" />
+
+
+        <TextView
+            android:id="@+id/sellierNomProduit10"
+            android:layout_width="150dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="570dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="12dip"
+            android:text=""
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:textColor="#ffffffff" />
+
+        <TextView
+            android:id="@+id/sellierQtteProduit10"
+            android:layout_width="50dp"
+            android:layout_marginLeft="195dp"
+            android:layout_marginTop="570dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="12dip"
+            android:text=""
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:textColor="#ffffffff" />
+    </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:gravity="left"
+            android:padding="10dip">
+
+        <Button
+            android:id="@+id/button13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
+
+            android:onClick="goChecklistActivity"
+            android:text="Checklist"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.073"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.993" />
+
+            <Button
+                android:id="@+id/button14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:layout_marginStart="20dp"
+                android:layout_toEndOf="@+id/button13"
+                android:onClick="goEventActivity"
+                android:text="Event"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.500"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.993" />
+
+            <Button
+
+                android:id="@+id/button20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+
+                android:layout_toEndOf="@+id/button14"
+                android:enabled="false"
+                android:text="Sellier"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.9"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.993" />
+        </RelativeLayout>
+
+    </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
