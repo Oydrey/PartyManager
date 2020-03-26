@@ -7,90 +7,879 @@
     android:background="#fffff0"
     tools:context=".ChecklistActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sur ChecklistActivity"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.049" />
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="98dp"
-        android:layout_height="43dp"
-        android:onClick="back"
-        android:text="Retour"
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.073"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.021" />
+        <LinearLayout
+            android:id="@+id/relatLayBlocNavHaut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/textViewEvenement"
+            tools:layout_editor_absoluteX="0dp">
 
-    <Button
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="left"
+                android:padding="10dip">
 
-        android:id="@+id/button5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_toEndOf="@+id/button4"
+                    android:text="Saisir les quantités"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.049" />
 
-        android:onClick="goSellierActivity"
-        android:text="Sellier"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.9"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.993" />
+                <Button
+                android:id="@+id/button4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
 
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="99dp"
-        android:layout_height="42dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="0dp"
+                android:onClick="back"
+                android:text="Retour"
 
-        android:onClick="goMainActivity"
-        android:text="Main"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.944"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.021" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.073"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.021" />
 
-    <Button
-        android:id="@+id/button22"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:enabled="false"
+            <Button
 
-        android:text="Checklist"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.073"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.993" />
+                android:id="@+id/button5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
 
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+                android:onClick="goSellierActivity"
+                android:text="Sellier"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.9"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.993" />
 
-        android:onClick="goEventActivity"
-        android:text="Event"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.500"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.993" />
+                <Button
+                    android:id="@+id/button6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
 
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/textView2"
+                    android:onClick="goMainActivity"
+                    android:text="Main"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0.944"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.021" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relatLayBlocQtte1"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="left"
+                android:paddingTop="10dip"
+                android:paddingLeft="10dip"
+                app:layout_constraintTop_toBottomOf="@+id/relatLayBlocNavHaut"
+                tools:layout_editor_absoluteX="0dp">
+
+                <TextView
+                    android:id="@+id/nomProduit1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text=""
+                    android:textColor="@android:color/black"
+                    android:textSize="24dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <EditText
+                    android:id="@+id/qtteProduit1"
+                    android:layout_width="63dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/nomProduit1"
+                    android:gravity="center_horizontal"
+                    android:hint="qtte"
+                    android:textColorHint="#000"
+                    android:textSize="22dp"
+                    tools:layout_editor_absoluteX="80dp"
+                    tools:layout_editor_absoluteY="184dp" />
+
+                <TextView
+                    android:id="@+id/slashProduit1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@+id/qtteProduit1"
+                    android:text="/"
+                    android:textColor="@android:color/black"
+                    android:textSize="24dp"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <EditText
+                    android:id="@+id/qtteSouhaiteProduit1"
+                    android:layout_width="63dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/slashProduit1"
+                    android:gravity="center_horizontal"
+                    android:hint="max"
+                    android:textColorHint="#000"
+                    android:textSize="22dp"
+                    tools:layout_editor_absoluteX="80dp"
+                    tools:layout_editor_absoluteY="184dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relatLayBlocQtte2"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="left"
+                android:paddingTop="10dip"
+                android:paddingLeft="10dip"
+                app:layout_constraintTop_toBottomOf="@+id/relatLayBlocQtte1"
+                tools:layout_editor_absoluteX="-17dp">
+
+                <TextView
+                    android:id="@+id/nomProduit2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text=""
+                    android:textColor="@android:color/black"
+                    android:textSize="24dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <EditText
+                    android:id="@+id/qtteProduit2"
+                    android:layout_width="63dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/nomProduit2"
+                    android:gravity="center_horizontal"
+                    android:hint="qtte"
+                    android:textColorHint="#000"
+                    android:textSize="22dp"
+                    tools:layout_editor_absoluteX="80dp"
+                    tools:layout_editor_absoluteY="184dp" />
+
+                <TextView
+                    android:id="@+id/slashProduit2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@+id/qtteProduit2"
+                    android:text="/"
+                    android:textColor="@android:color/black"
+                    android:textSize="24dp"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <EditText
+                    android:id="@+id/qtteSouhaiteProduit2"
+                    android:layout_width="63dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/slashProduit2"
+                    android:gravity="center_horizontal"
+                    android:hint="max"
+                    android:textColorHint="#000"
+                    android:textSize="22dp"
+                    tools:layout_editor_absoluteX="80dp"
+                    tools:layout_editor_absoluteY="184dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relatLayBlocQtte3"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="left"
+                android:paddingTop="10dip"
+                android:paddingLeft="10dip"
+                app:layout_constraintTop_toBottomOf="@+id/relatLayBlocQtte2"
+                tools:layout_editor_absoluteX="0dp">
+                <TextView
+                    android:id="@+id/nomProduit3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text=""
+                    android:textColor="@android:color/black"
+                    android:textSize="24dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <EditText
+                    android:id="@+id/qtteProduit3"
+                    android:layout_width="63dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/nomProduit3"
+                    android:gravity="center_horizontal"
+                    android:hint="qtte"
+                    android:textColorHint="#000"
+                    android:textSize="22dp"
+                    tools:layout_editor_absoluteX="80dp"
+                    tools:layout_editor_absoluteY="184dp" />
+
+                <TextView
+                    android:id="@+id/slashProduit3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@+id/qtteProduit3"
+                    android:text="/"
+                    android:textColor="@android:color/black"
+                    android:textSize="24dp"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <EditText
+                    android:id="@+id/qtteSouhaiteProduit3"
+                    android:layout_width="63dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/slashProduit3"
+                    android:gravity="center_horizontal"
+                    android:hint="max"
+                    android:textColorHint="#000"
+                    android:textSize="22dp"
+                    tools:layout_editor_absoluteX="80dp"
+                    tools:layout_editor_absoluteY="184dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relatLayBlocQtte4"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="left"
+                android:paddingTop="10dip"
+                android:paddingLeft="10dip"
+                app:layout_constraintTop_toBottomOf="@+id/relatLayBlocQtte3"
+                tools:layout_editor_absoluteX="0dp">
+                <TextView
+                    android:id="@+id/nomProduit4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text=""
+                    android:textColor="@android:color/black"
+                    android:textSize="24dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <EditText
+                    android:id="@+id/qtteProduit4"
+                    android:layout_width="63dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/nomProduit4"
+                    android:gravity="center_horizontal"
+                    android:hint="qtte"
+                    android:textColorHint="#000"
+                    android:textSize="22dp"
+                    tools:layout_editor_absoluteX="80dp"
+                    tools:layout_editor_absoluteY="184dp" />
+
+                <TextView
+                    android:id="@+id/slashProduit4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@+id/qtteProduit4"
+                    android:text="/"
+                    android:textColor="@android:color/black"
+                    android:textSize="24dp"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <EditText
+                    android:id="@+id/qtteSouhaiteProduit4"
+                    android:layout_width="63dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/slashProduit4"
+                    android:gravity="center_horizontal"
+                    android:hint="max"
+                    android:textColorHint="#000"
+                    android:textSize="22dp"
+                    tools:layout_editor_absoluteX="80dp"
+                    tools:layout_editor_absoluteY="184dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relatLayBlocQtte5"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="left"
+                android:paddingTop="10dip"
+                android:paddingLeft="10dip"
+                app:layout_constraintTop_toBottomOf="@+id/relatLayBlocQtte4"
+                tools:layout_editor_absoluteX="0dp">
+                <TextView
+                    android:id="@+id/nomProduit5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text=""
+                    android:textColor="@android:color/black"
+                    android:textSize="24dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <EditText
+                    android:id="@+id/qtteProduit5"
+                    android:layout_width="63dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/nomProduit5"
+                    android:gravity="center_horizontal"
+                    android:hint="qtte"
+                    android:textColorHint="#000"
+                    android:textSize="22dp"
+                    tools:layout_editor_absoluteX="80dp"
+                    tools:layout_editor_absoluteY="184dp" />
+
+                <TextView
+                    android:id="@+id/slashProduit5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@+id/qtteProduit5"
+                    android:text="/"
+                    android:textColor="@android:color/black"
+                    android:textSize="24dp"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <EditText
+                    android:id="@+id/qtteSouhaiteProduit5"
+                    android:layout_width="63dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/slashProduit5"
+                    android:gravity="center_horizontal"
+                    android:hint="max"
+                    android:textColorHint="#000"
+                    android:textSize="22dp"
+                    tools:layout_editor_absoluteX="80dp"
+                    tools:layout_editor_absoluteY="184dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relatLayBlocQtte6"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="left"
+                android:paddingTop="10dip"
+                android:paddingLeft="10dip"
+                app:layout_constraintTop_toBottomOf="@+id/relatLayBlocQtte5"
+                tools:layout_editor_absoluteX="0dp">
+                <TextView
+                    android:id="@+id/nomProduit6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text=""
+                    android:textColor="@android:color/black"
+                    android:textSize="24dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <EditText
+                    android:id="@+id/qtteProduit6"
+                    android:layout_width="63dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/nomProduit6"
+                    android:gravity="center_horizontal"
+                    android:hint="qtte"
+                    android:textColorHint="#000"
+                    android:textSize="22dp"
+                    tools:layout_editor_absoluteX="80dp"
+                    tools:layout_editor_absoluteY="184dp" />
+
+                <TextView
+                    android:id="@+id/slashProduit6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@+id/qtteProduit6"
+                    android:text="/"
+                    android:textColor="@android:color/black"
+                    android:textSize="24dp"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <EditText
+                    android:id="@+id/qtteSouhaiteProduit6"
+                    android:layout_width="63dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/slashProduit6"
+                    android:gravity="center_horizontal"
+                    android:hint="max"
+                    android:textColorHint="#000"
+                    android:textSize="22dp"
+                    tools:layout_editor_absoluteX="80dp"
+                    tools:layout_editor_absoluteY="184dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relatLayBlocQtte7"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="left"
+                android:paddingTop="10dip"
+                android:paddingLeft="10dip"
+                app:layout_constraintTop_toBottomOf="@+id/relatLayBlocQtte6"
+                tools:layout_editor_absoluteX="0dp">
+                <TextView
+                    android:id="@+id/nomProduit7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text=""
+                    android:textColor="@android:color/black"
+                    android:textSize="24dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <EditText
+                    android:id="@+id/qtteProduit7"
+                    android:layout_width="63dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/nomProduit7"
+                    android:gravity="center_horizontal"
+                    android:hint="qtte"
+                    android:textColorHint="#000"
+                    android:textSize="22dp"
+                    tools:layout_editor_absoluteX="80dp"
+                    tools:layout_editor_absoluteY="184dp" />
+
+                <TextView
+                    android:id="@+id/slashProduit7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@+id/qtteProduit7"
+                    android:text="/"
+                    android:textColor="@android:color/black"
+                    android:textSize="24dp"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <EditText
+                    android:id="@+id/qtteSouhaiteProduit7"
+                    android:layout_width="63dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/slashProduit7"
+                    android:gravity="center_horizontal"
+                    android:hint="max"
+                    android:textColorHint="#000"
+                    android:textSize="22dp"
+                    tools:layout_editor_absoluteX="80dp"
+                    tools:layout_editor_absoluteY="184dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relatLayBlocQtte8"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="left"
+                android:paddingTop="10dip"
+                android:paddingLeft="10dip"
+                app:layout_constraintTop_toBottomOf="@+id/relatLayBlocQtte7"
+                tools:layout_editor_absoluteX="0dp">
+                <TextView
+                    android:id="@+id/nomProduit8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text=""
+                    android:textColor="@android:color/black"
+                    android:textSize="24dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <EditText
+                    android:id="@+id/qtteProduit8"
+                    android:layout_width="63dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/nomProduit8"
+                    android:gravity="center_horizontal"
+                    android:hint="qtte"
+                    android:textColorHint="#000"
+                    android:textSize="22dp"
+                    tools:layout_editor_absoluteX="80dp"
+                    tools:layout_editor_absoluteY="184dp" />
+
+                <TextView
+                    android:id="@+id/slashProduit8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@+id/qtteProduit8"
+                    android:text="/"
+                    android:textColor="@android:color/black"
+                    android:textSize="24dp"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <EditText
+                    android:id="@+id/qtteSouhaiteProduit8"
+                    android:layout_width="63dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/slashProduit8"
+                    android:gravity="center_horizontal"
+                    android:hint="max"
+                    android:textColorHint="#000"
+                    android:textSize="22dp"
+                    tools:layout_editor_absoluteX="80dp"
+                    tools:layout_editor_absoluteY="184dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relatLayBlocQtte9"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="left"
+                android:paddingTop="10dip"
+                android:paddingLeft="10dip"
+                app:layout_constraintTop_toBottomOf="@+id/relatLayBlocQtte8"
+                tools:layout_editor_absoluteX="0dp">
+                <TextView
+                    android:id="@+id/nomProduit9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text=""
+                    android:textColor="@android:color/black"
+                    android:textSize="24dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <EditText
+                    android:id="@+id/qtteProduit9"
+                    android:layout_width="63dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/nomProduit9"
+                    android:gravity="center_horizontal"
+                    android:hint="qtte"
+                    android:textColorHint="#000"
+                    android:textSize="22dp"
+                    tools:layout_editor_absoluteX="80dp"
+                    tools:layout_editor_absoluteY="184dp" />
+
+                <TextView
+                    android:id="@+id/slashProduit9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@+id/qtteProduit9"
+                    android:text="/"
+                    android:textColor="@android:color/black"
+                    android:textSize="24dp"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <EditText
+                    android:id="@+id/qtteSouhaiteProduit9"
+                    android:layout_width="63dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/slashProduit9"
+                    android:gravity="center_horizontal"
+                    android:hint="max"
+                    android:textColorHint="#000"
+                    android:textSize="22dp"
+                    tools:layout_editor_absoluteX="80dp"
+                    tools:layout_editor_absoluteY="184dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relatLayBlocQtte10"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="left"
+                android:paddingTop="10dip"
+                android:paddingLeft="10dip"
+                app:layout_constraintTop_toBottomOf="@+id/relatLayBlocQtte9"
+                tools:layout_editor_absoluteX="0dp">
+                <TextView
+                    android:id="@+id/nomProduit10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text=""
+                    android:textColor="@android:color/black"
+                    android:textSize="24dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <EditText
+                    android:id="@+id/qtteProduit10"
+                    android:layout_width="63dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/nomProduit10"
+                    android:gravity="center_horizontal"
+                    android:hint="qtte"
+                    android:textColorHint="#000"
+                    android:textSize="22dp"
+                    tools:layout_editor_absoluteX="80dp"
+                    tools:layout_editor_absoluteY="184dp" />
+
+                <TextView
+                    android:id="@+id/slashProduit10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@+id/qtteProduit10"
+                    android:text="/"
+                    android:textColor="@android:color/black"
+                    android:textSize="24dp"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <EditText
+                    android:id="@+id/qtteSouhaiteProduit10"
+                    android:layout_width="63dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/slashProduit10"
+                    android:gravity="center_horizontal"
+                    android:hint="max"
+                    android:textColorHint="#000"
+                    android:textSize="22dp"
+                    tools:layout_editor_absoluteX="80dp"
+                    tools:layout_editor_absoluteY="184dp" />
+
+            </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+
+                android:onClick="saveQuantityAndGoMainSellier"
+                android:text="Sauvegarder"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.500"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.993" />
+        </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:gravity="left"
+                android:padding="10dip">
+
+                <Button
+                    android:id="@+id/button22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="10dp"
+
+                    android:enabled="false"
+                    android:text="Checklist"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0.073"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.993" />
+
+                <Button
+                    android:id="@+id/button7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginStart="20dp"
+                    android:layout_toEndOf="@+id/button22"
+                    android:onClick="goEventActivity"
+                    android:text="Event"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0.500"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.993" />
+
+                <Button
+
+                    android:id="@+id/button27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginStart="20dp"
+                    android:layout_toEndOf="@+id/button7"
+                    android:onClick="goSellierActivity"
+                    android:text="Sellier"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0.9"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.993" />
+            </RelativeLayout>
+
+    </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
