@@ -43,4 +43,12 @@ public class ChecklistActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void saveQuantityAndGoMainSellier(View v) {
+        // sauvegarder quantité dans BD
+
+        // redirection sellier
+        Intent intent = new Intent(this,SellierActivity.class);
+        startActivity(intent);
+    }
+
 }
