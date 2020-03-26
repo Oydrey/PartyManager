@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,6 +26,19 @@ public class MainActivity extends AppCompatActivity {
         button17 = findViewById(R.id.button17);
         button18 = findViewById(R.id.button18);
         button19 = findViewById(R.id.button19);
+
+        SoireeDAO soireeDAO = new SoireeDAO(this);
+
+        soireeDAO.open();
+
+        Soiree soiree = new Soiree("Chez goran", "Neuvy", "17/09/2020", "15H", "La teuf !");
+
+        soireeDAO.ajouter(soiree);
+
+        Soiree soireeFromBD = soireeDAO.selectionnerSoireeByID(1);
+
+        Toast.makeText(this, soireeFromBD.toString(), Toast.LENGTH_SHORT).show();
+
     }
 
     @Override
