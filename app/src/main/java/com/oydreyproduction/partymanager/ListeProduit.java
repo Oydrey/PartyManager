@@ -9,6 +9,11 @@ public class ListeProduit {
 
     }
 
+    public ListeProduit(int idProduit, int idSoiree){
+        this.idProduit = idProduit;
+        this.idSoiree = idSoiree;
+    }
+
     public int getIdProduit(){
         return idProduit;
     }
