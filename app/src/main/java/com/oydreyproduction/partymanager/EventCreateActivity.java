@@ -3,15 +3,50 @@ package com.oydreyproduction.partymanager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class EventCreateActivity extends AppCompatActivity {
 
+    EditText nomSoiree;
+    EditText dateSoiree;
+    EditText lieuSoiree;
+    EditText heureSoiree;
+    EditText descSoiree;
+
+    EditText produit1;
+    EditText produit2;
+    EditText produit3;
+    EditText produit4;
+    EditText produit5;
+    EditText produit6;
+    EditText produit7;
+    EditText produit8;
+    EditText produit9;
+    EditText produit10;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.eventcreate_activity);
+
+        nomSoiree = findViewById(R.id.nom);
+        dateSoiree = findViewById(R.id.date);
+        lieuSoiree = findViewById(R.id.lieu);
+        heureSoiree = findViewById(R.id.heure);
+        descSoiree = findViewById(R.id.description);
+
+        produit1 = findViewById(R.id.produit1);
+        produit2 = findViewById(R.id.produit2);
+        produit3 = findViewById(R.id.produit3);
+        produit4 = findViewById(R.id.produit4);
+        produit5 = findViewById(R.id.produit5);
+        produit6 = findViewById(R.id.produit6);
+        produit7 = findViewById(R.id.produit7);
+        produit8 = findViewById(R.id.produit8);
+        produit9 = findViewById(R.id.produit9);
+        produit10 = findViewById(R.id.produit10);
     }
 
     public void back(View v) {
@@ -29,6 +64,38 @@ public class EventCreateActivity extends AppCompatActivity {
 
     public void saveEventAndGoMainActivity(View v) {
         // sauvegarder event dans BD
+        String strNomSOiree = nomSoiree.getText().toString();
+        String strLieuSoiree = lieuSoiree.getText().toString();
+        String strDateSoiree = dateSoiree.getText().toString();
+        String strHeureSoiree = heureSoiree.getText().toString();
+        String strDescSoiree = descSoiree.getText().toString();
+
+        String strProduit1 = produit1.getText().toString();
+        String strProduit2 = produit2.getText().toString();
+        String strProduit3 = produit3.getText().toString();
+        String strProduit4 = produit4.getText().toString();
+        String strProduit5 = produit5.getText().toString();
+        String strProduit6 = produit6.getText().toString();
+        String strProduit7 = produit7.getText().toString();
+        String strProduit8 = produit8.getText().toString();
+        String strProduit9 = produit9.getText().toString();
+        String strProduit10 = produit10.getText().toString();
+
+        PartyManagerBDD partyManagerBDD = new PartyManagerBDD(this);
+        partyManagerBDD.open();
+
+        Soiree soiree = new Soiree(strNomSOiree, strLieuSoiree, strDateSoiree, strHeureSoiree, strDescSoiree);
+        partyManagerBDD.insertSoiree(soiree);
+        int idSoiree = partyManagerBDD.getSoireeWithNom(strNomSOiree).getId();
+        String[] produits = {strProduit1, strProduit2, strProduit3, strProduit4, strProduit5, strProduit6, strProduit7, strProduit8, strProduit9, strProduit10};
+        for (String str : produits){
+            if(!str.equals("")){
+                partyManagerBDD.insertProduit(new Produit(str, 1));
+                int idProduit = partyManagerBDD.getProduitWithNom(str).getId();
+                ListeProduit listeProduit = new ListeProduit(idProduit, idSoiree);
+                partyManagerBDD.insertListeProduit(listeProduit);
+            }
+        }
 
         // redirection main
         Intent intent = new Intent(this,MainActivity.class);

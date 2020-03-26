@@ -134,6 +134,12 @@ public class PartyManagerBDD {
         return cursorToSoiree(c);
     }
 
+    public Soiree getSoireeWithID(int id) {
+        Cursor c = bdd.query(TABLE_SOIREE, new String[] {COL_ID_SOIREE, COL_NOM_SOIREE, COL_LIEU, COL_DATE, COL_HEURE, COL_DESCRIPTION},
+                COL_ID_SOIREE + " LIKE \"" + id + "\"", null, null, null, null);
+        return cursorToSoiree(c);
+    }
+
     private Produit cursorToProduit(Cursor c) {
         if (c.getCount() == 0)
             return null;

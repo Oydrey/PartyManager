@@ -3,6 +3,7 @@ package com.oydreyproduction.partymanager;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 public class BaseSQLite extends SQLiteOpenHelper {
 
@@ -22,10 +23,14 @@ public class BaseSQLite extends SQLiteOpenHelper {
 
     private static final String TABLE_LISTE_PRODUITS = "table_liste_produits";
 
+    private static final String TABLE_PRODUIT_DROP = "DROP TABLE IF EXISTS " + TABLE_PRODUITS + ";";
+    private static final String TABLE_SOIREE_DROP = "DROP TABLE IF EXISTS " + TABLE_SOIREE + ";";
+    private static final String TABLE_LISTE_PRODUIT_DROP = "DROP TABLE IF EXISTS " + TABLE_LISTE_PRODUITS + ";";
+
     private static final String CREATE_BDD = "CREATE TABLE " + TABLE_PRODUITS + " (\n" +
             "\t" + COL_ID_PRODUIT + " INTEGER PRIMARY KEY AUTOINCREMENT,\n" +
             "\t" + COL_NOM_PRODUIT + " TEXT NOT NULL,\n" +
-            "\t" + COL_QTE_NECESSAIRE + " INTEGER NOT NULL,\n" +
+            "\t" + COL_QTE_NECESSAIRE + " INTEGER,\n" +
             "\t" + COL_QTE_ACHETEE + " INTEGER DEFAULT 0\n" +
             ");\n" +
             "CREATE TABLE " + TABLE_SOIREE + " (\n" +
@@ -55,9 +60,9 @@ public class BaseSQLite extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE " + TABLE_PRODUITS + ";");
-        db.execSQL("DROP TABLE " + TABLE_SOIREE + ";");
-        db.execSQL("DROP TABLE " + TABLE_LISTE_PRODUITS + ";");
+        db.execSQL(TABLE_PRODUIT_DROP);
+        db.execSQL(TABLE_SOIREE_DROP);
+        db.execSQL(TABLE_LISTE_PRODUIT_DROP);
         onCreate(db);
     }
 

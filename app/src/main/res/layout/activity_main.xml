@@ -31,7 +31,7 @@
 
 
         android:shadowColor="@android:color/black"
-        android:text="Chez momo"
+        android:text=""
         android:textColor="@android:color/holo_red_dark"
         android:textSize="18dp"
         android:textStyle="italic"
@@ -48,7 +48,7 @@
         android:background="#fffefa"
         android:onClick="goEventActivity"
 
-        android:text="La réu des vrais"
+        android:text=""
         android:textColor="@android:color/holo_orange_dark"
         android:textSize="18dp"
         android:textStyle="italic"
@@ -65,7 +65,7 @@
         android:background="#fffefa"
         android:onClick="goEventActivity"
 
-        android:text="Soiré mousse de Goran"
+        android:text=""
         android:textColor="@android:color/holo_green_dark"
         android:textSize="18dp"
         android:textStyle="italic"
@@ -82,7 +82,7 @@
         android:background="#fffefa"
         android:onClick="goEventActivity"
 
-        android:text="Soiré shooter Oeil"
+        android:text=""
         android:textColor="@android:color/holo_blue_dark"
         android:textSize="18dp"
         android:textStyle="italic"
@@ -99,7 +99,7 @@
         android:background="#fffefa"
 
         android:onClick="goEventActivity"
-        android:text="Before chez Chichi"
+        android:text=""
         android:textColor="@android:color/holo_purple"
         android:textSize="18dp"
         android:textStyle="italic"
