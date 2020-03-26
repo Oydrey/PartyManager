@@ -47,15 +47,20 @@ public class ListeProduitDAO extends DAOBase {
                 " where " + COL_FKR_ID_SOIREE + " = " + idSoiree, null);
         int[] idProduit = new int[10];
         int i=0;
-        for(c.moveToFirst(); !c.isAfterLast(); c.moveToNext()){
-            idProduit[i] = c.getInt(i);
-            i+=1;
+        if(c != null){
+            for(c.moveToFirst(); !c.isAfterLast(); c.moveToNext()){
+                idProduit[i] = c.getInt(i);
+                i+=1;
+            }
+            ListeProduit[] listeProduit = new ListeProduit[10];
+            for(int j=0; j < idProduit.length; j++){
+                listeProduit[j] = new ListeProduit(idProduit[j], idSoiree);
+            }
+            return listeProduit;
         }
-        ListeProduit[] listeProduit = new ListeProduit[10];
-        for(int j=0; j < idProduit.length; j++){
-            listeProduit[j] = new ListeProduit(idProduit[j], idSoiree);
+        else{
+            return null;
         }
-        return listeProduit;
     }
 
 }

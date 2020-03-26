@@ -35,9 +35,9 @@ public class MainActivity extends AppCompatActivity {
 
         soireeDAO.ajouter(soiree);
 
-        //Soiree soireeFromBD = soireeDAO.selectionnerSoireeByID(1);
+        Soiree soireeFromBD = soireeDAO.selectionnerSoireeByID(1);
 
-        //Toast.makeText(this, soireeFromBD.toString(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, soireeFromBD.toString(), Toast.LENGTH_SHORT).show();
 
     }
 

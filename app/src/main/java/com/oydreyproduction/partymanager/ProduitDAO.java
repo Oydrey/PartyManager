@@ -48,11 +48,17 @@ public class ProduitDAO extends DAOBase {
     public Produit selectionnerProduitByID(int id){
         Cursor c = mDb.rawQuery("select " + COL_NOM_PRODUIT + ", " + COL_QTE_NECESSAIRE + ", " + COL_QTE_ACHETEE +
                 " from " + TABLE_PRODUIT + " where " + COL_ID_PRODUIT + " = " + id, null);
-        String nom = c.getString(0);
-        int qteNecessaire = c.getInt(1);
-        int qteAchetee = c.getInt(2);
-        Produit produit = new Produit(nom, qteNecessaire, qteAchetee);
-        return produit;
+        if(c != null && c.moveToFirst()){
+            String nom = c.getString(0);
+            int qteNecessaire = c.getInt(1);
+            int qteAchetee = c.getInt(2);
+            c.close();
+            Produit produit = new Produit(nom, qteNecessaire, qteAchetee);
+            return produit;
+        }
+        else{
+            return new Produit("vide", 0, 0);
+        }
     }
 
 }

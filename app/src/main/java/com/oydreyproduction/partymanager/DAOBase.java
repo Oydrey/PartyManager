@@ -13,9 +13,7 @@ public abstract class DAOBase {
     protected BaseSQLite baseSQLite = null;
 
     public SQLiteDatabase open(){
-        Log.v("Je suis la", "open");
         mDb = baseSQLite.getWritableDatabase();
-        Log.v("Je suis la", "apres getWritableDatabase");
         return mDb;
     }
 

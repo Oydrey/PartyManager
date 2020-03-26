@@ -59,7 +59,6 @@ public class BaseSQLite extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        Log.v("onCreate", "creation tables");
         db.execSQL(TABLE_CREATE_PRODUIT);
         db.execSQL(TABLE_CREATE_SOIREE);
         db.execSQL(TABLE_CREATE_LISTE_PRODUIT);
@@ -67,7 +66,6 @@ public class BaseSQLite extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        Log.v("onUpgrade", "la");
         db.execSQL(TABLE_PRODUIT_DROP);
         db.execSQL(TABLE_SOIREE_DROP);
         db.execSQL(TABLE_LISTE_PRODUIT_DROP);
