@@ -75,4 +75,22 @@ public class SoireeDAO extends DAOBase {
         }
     }
 
+    public Soiree selectionnerSoireeByNom(String nom){
+        Cursor c = mDb.rawQuery("select " + COL_ID_SOIREE + ", " + COL_LIEU + ", " + COL_DATE +
+                ", " + COL_HEURE + ", " + COL_DESCRIPTION + " from " + TABLE_SOIREE + " where " + COL_NOM_SOIREE + " = \"" + nom + "\"", null);
+        if(c != null && c.moveToFirst()){
+            int id = c.getInt(0);
+            String lieu = c.getString(1);
+            String date = c.getString(2);
+            String heure = c.getString(3);
+            String desc = c.getString(4);
+            c.close();
+            Soiree soiree = new Soiree(nom, lieu, date, heure, desc);
+            return soiree;
+        }
+        else{
+            return new Soiree("vide", "", "", "", "");
+        }
+    }
+
 }
