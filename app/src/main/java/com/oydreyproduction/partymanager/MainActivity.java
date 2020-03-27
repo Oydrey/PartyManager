@@ -31,13 +31,19 @@ public class MainActivity extends AppCompatActivity {
 
         soireeDAO.open();
 
-        Soiree soiree = new Soiree("Chez goran", "Neuvy", "17/09/2020", "15H", "La teuf !");
+        Soiree soiree1 = soireeDAO.selectionnerSoireeByID(1);
+        Soiree soiree2 = soireeDAO.selectionnerSoireeByID(2);
+        Soiree soiree3 = soireeDAO.selectionnerSoireeByID(3);
+        Soiree soiree4 = soireeDAO.selectionnerSoireeByID(4);
+        Soiree soiree5 = soireeDAO.selectionnerSoireeByID(5);
 
-        soireeDAO.ajouter(soiree);
+        button15.setText(soiree1.getNom());
+        button16.setText(soiree2.getNom());
+        button17.setText(soiree3.getNom());
+        button18.setText(soiree4.getNom());
+        button19.setText(soiree5.getNom());
 
-        Soiree soireeFromBD = soireeDAO.selectionnerSoireeByID(1);
-
-        Toast.makeText(this, soireeFromBD.toString(), Toast.LENGTH_SHORT).show();
+        soireeDAO.close();
 
     }
 
@@ -88,8 +94,98 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void goEventActivity(View v) {
+    public void goEventActivity1(View v) {
+        Button button = findViewById(R.id.button15);
+        String nom = button.getText().toString();
+
+        SoireeDAO soireeDAO = new SoireeDAO(this);
+
+        soireeDAO.open();
+
+        Soiree soiree = soireeDAO.selectionnerSoireeByNom(nom);
+
+        soireeDAO.close();
+
+        int idSoiree = soiree.getId();
+
         Intent intent=new Intent(this,EventActivity.class);
+        intent.putExtra("idSoiree", idSoiree);
+        startActivity(intent);
+    }
+
+    public void goEventActivity2(View v) {
+        Button button = findViewById(R.id.button16);
+        String nom = button.getText().toString();
+
+        SoireeDAO soireeDAO = new SoireeDAO(this);
+
+        soireeDAO.open();
+
+        Soiree soiree = soireeDAO.selectionnerSoireeByNom(nom);
+
+        soireeDAO.close();
+
+        int idSoiree = soiree.getId();
+
+        Intent intent=new Intent(this,EventActivity.class);
+        intent.putExtra("idSoiree", idSoiree);
+        startActivity(intent);
+    }
+
+    public void goEventActivity3(View v) {
+        Button button = findViewById(R.id.button17);
+        String nom = button.getText().toString();
+
+        SoireeDAO soireeDAO = new SoireeDAO(this);
+
+        soireeDAO.open();
+
+        Soiree soiree = soireeDAO.selectionnerSoireeByNom(nom);
+
+        soireeDAO.close();
+
+        int idSoiree = soiree.getId();
+
+        Intent intent=new Intent(this,EventActivity.class);
+        intent.putExtra("idSoiree", idSoiree);
+        startActivity(intent);
+    }
+
+    public void goEventActivity4(View v) {
+        Button button = findViewById(R.id.button18);
+        String nom = button.getText().toString();
+
+        SoireeDAO soireeDAO = new SoireeDAO(this);
+
+        soireeDAO.open();
+
+        Soiree soiree = soireeDAO.selectionnerSoireeByNom(nom);
+
+        soireeDAO.close();
+
+        int idSoiree = soiree.getId();
+
+        Intent intent=new Intent(this,EventActivity.class);
+        intent.putExtra("idSoiree", idSoiree);
+        startActivity(intent);
+    }
+
+    public void goEventActivity5(View v) {
+        Button button = findViewById(R.id.button19);
+        String nom = button.getText().toString();
+
+        SoireeDAO soireeDAO = new SoireeDAO(this);
+
+        soireeDAO.open();
+
+        Soiree soiree = soireeDAO.selectionnerSoireeByNom(nom);
+
+        soireeDAO.close();
+
+        int idSoiree = soiree.getId();
+
+        Intent intent=new Intent(this,EventActivity.class);
+        intent.putExtra("idSoiree", idSoiree);
         startActivity(intent);
     }
 

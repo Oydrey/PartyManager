@@ -61,4 +61,20 @@ public class ProduitDAO extends DAOBase {
         }
     }
 
+    public Produit selectionnerProduitByNom(String nom){
+        Cursor c = mDb.rawQuery("select " + COL_ID_PRODUIT + ", " + COL_QTE_NECESSAIRE + ", " + COL_QTE_ACHETEE +
+                " from " + TABLE_PRODUIT + " where " + COL_NOM_PRODUIT + " = " + nom, null);
+        if(c != null && c.moveToFirst()){
+            int id = c.getInt(0);
+            int qteNecessaire = c.getInt(1);
+            int qteAchetee = c.getInt(2);
+            c.close();
+            Produit produit = new Produit(nom, qteNecessaire, qteAchetee);
+            return produit;
+        }
+        else{
+            return new Produit("vide", 0, 0);
+        }
+    }
+
 }
