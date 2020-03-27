@@ -2,6 +2,7 @@ package com.oydreyproduction.partymanager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -10,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ChecklistActivity extends AppCompatActivity {
 
-    int idSoiree;
+    int idSoiree = -1;
 
     TextView nomProduit1;
     EditText qteAcheteeProduit1;
@@ -109,7 +110,24 @@ public class ChecklistActivity extends AppCompatActivity {
         produitDAO.open();
         listeProduitDAO.open();
 
-        
+        Log.v("Je suis la", String.valueOf(idSoiree));
+
+        ListeProduit[] listeProduits = listeProduitDAO.selectionnerListeProduitByIDSoiree(idSoiree);
+
+        TextView[] nomProduits = {nomProduit1, nomProduit2, nomProduit3, nomProduit4, nomProduit5, nomProduit6, nomProduit7, nomProduit8, nomProduit9, nomProduit10};
+        EditText[] qteAcheteeProduits = {qteAcheteeProduit1, qteAcheteeProduit2, qteAcheteeProduit3, qteAcheteeProduit4, qteAcheteeProduit5, qteAcheteeProduit6, qteAcheteeProduit7, qteAcheteeProduit8, qteAcheteeProduit9, qteAcheteeProduit10};
+        EditText[] qteNecessaireProduits = {qteNecessaireProduit1, qteNecessaireProduit2, qteNecessaireProduit3, qteNecessaireProduit4, qteNecessaireProduit5, qteNecessaireProduit6, qteNecessaireProduit7, qteNecessaireProduit8, qteNecessaireProduit9, qteNecessaireProduit10};
+
+        int i=0;
+
+        for(ListeProduit listeProduit : listeProduits){
+            Log.v("Je suis la", listeProduit.toString());
+            Produit produit = produitDAO.selectionnerProduitByID(listeProduit.getIdProduit());
+            nomProduits[i].setText(produit.getNom());
+            qteAcheteeProduits[i].setText(String.valueOf(produit.getQteAchetee()));
+            qteNecessaireProduits[i].setText(String.valueOf(produit.getQteNecessaire()));
+            i+=1;
+        }
 
         produitDAO.close();
         listeProduitDAO.close();

@@ -3,6 +3,7 @@ package com.oydreyproduction.partymanager;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.util.Log;
 
 public class ProduitDAO extends DAOBase {
 
@@ -48,22 +49,25 @@ public class ProduitDAO extends DAOBase {
     public Produit selectionnerProduitByID(int id){
         Cursor c = mDb.rawQuery("select " + COL_NOM_PRODUIT + ", " + COL_QTE_NECESSAIRE + ", " + COL_QTE_ACHETEE +
                 " from " + TABLE_PRODUIT + " where " + COL_ID_PRODUIT + " = " + id, null);
+        //Log.v("Je suis la", c.toString());
         if(c != null && c.moveToFirst()){
             String nom = c.getString(0);
             int qteNecessaire = c.getInt(1);
             int qteAchetee = c.getInt(2);
             c.close();
             Produit produit = new Produit(nom, qteNecessaire, qteAchetee);
+            //Log.v("Je suis la", "selectionnerProduitByID dans if");
             return produit;
         }
         else{
+            //Log.v("Je suis la", "selectionnerProduitByID dans else");
             return new Produit("vide", 0, 0);
         }
     }
 
     public Produit selectionnerProduitByNom(String nom){
         Cursor c = mDb.rawQuery("select " + COL_ID_PRODUIT + ", " + COL_QTE_NECESSAIRE + ", " + COL_QTE_ACHETEE +
-                " from " + TABLE_PRODUIT + " where " + COL_NOM_PRODUIT + " = " + nom, null);
+                " from " + TABLE_PRODUIT + " where " + COL_NOM_PRODUIT + " = \"" + nom + "\"", null);
         if(c != null && c.moveToFirst()){
             int id = c.getInt(0);
             int qteNecessaire = c.getInt(1);

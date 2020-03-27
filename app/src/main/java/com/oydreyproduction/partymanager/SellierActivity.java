@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SellierActivity extends AppCompatActivity {
 
-    int idSoiree;
+    int idSoiree = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

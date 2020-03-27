@@ -77,7 +77,7 @@ public class SoireeDAO extends DAOBase {
 
     public Soiree selectionnerSoireeByNom(String nom){
         Cursor c = mDb.rawQuery("select " + COL_ID_SOIREE + ", " + COL_LIEU + ", " + COL_DATE +
-                ", " + COL_HEURE + ", " + COL_DESCRIPTION + " from " + TABLE_SOIREE + " where " + COL_NOM_SOIREE + " = " + nom, null);
+                ", " + COL_HEURE + ", " + COL_DESCRIPTION + " from " + TABLE_SOIREE + " where " + COL_NOM_SOIREE + " = \"" + nom + "\"", null);
         if(c != null && c.moveToFirst()){
             int id = c.getInt(0);
             String lieu = c.getString(1);

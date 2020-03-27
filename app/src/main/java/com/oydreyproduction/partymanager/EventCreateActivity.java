@@ -2,6 +2,7 @@ package com.oydreyproduction.partymanager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -96,10 +97,9 @@ public class EventCreateActivity extends AppCompatActivity {
         String[] strProduits = {strProduit1, strProduit2, strProduit3, strProduit4, strProduit5, strProduit6, strProduit7, strProduit8, strProduit9, strProduit10};
 
         for(String produit : strProduits){
-            if(!produit.equals("")){
+            if(!(produit.equals(""))){
+                Log.v("Je suis la", "Dans EventCreateActivity, dans for, dans if (ajout produit)");
                 produitDAO.ajouter(new Produit(produit, 1));
-                int idProduit = produitDAO.selectionnerProduitByNom(produit).getId();
-                listeProduitDAO.ajouter(new ListeProduit(idProduit, soiree.getId()));
             }
         }
 
