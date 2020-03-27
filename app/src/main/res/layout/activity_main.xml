@@ -14,7 +14,7 @@
         android:text="Mes évènements"
         android:textColor="@android:color/black"
         android:textSize="24dp"
-        android:textStyle="italic"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -23,100 +23,85 @@
 
     <Button
         android:id="@+id/button15"
-        android:layout_width="421dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="80dp"
         android:onClick="goEventActivity1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/commun_button"
 
 
+        android:onClick="goEventActivity"
         android:shadowColor="@android:color/black"
         android:text=""
         android:textColor="@android:color/holo_red_dark"
         android:textSize="18dp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.171" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/button16"
-        android:layout_width="421dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="35dp"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
         android:onClick="goEventActivity2"
         android:background="@drawable/commun_button"
+        android:onClick="goEventActivity"
 
         android:text=""
         android:textColor="@android:color/holo_orange_dark"
         android:textSize="18dp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.338" />
+        app:layout_constraintTop_toBottomOf="@+id/button15"
+        tools:layout_editor_absoluteX="0dp" />
 
     <Button
         android:id="@+id/button17"
-        android:layout_width="421dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="80dp"
         android:onClick="goEventActivity3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="35dp"
         android:background="@drawable/commun_button"
 
         android:text=""
-        android:textColor="@android:color/holo_green_dark"
+        android:textColor="#09244B"
         android:textSize="18dp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.509" />
+        app:layout_constraintTop_toBottomOf="@+id/button16" />
 
     <Button
         android:id="@+id/button18"
-        android:layout_width="421dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="80dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="35dp"
         android:onClick="goEventActivity4"
         android:background="@drawable/commun_button"
 
+        android:onClick="goEventActivity"
         android:text=""
-        android:textColor="@android:color/holo_blue_dark"
+        android:textColor="#27650B"
         android:textSize="18dp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.681" />
+        app:layout_constraintTop_toBottomOf="@+id/button17" />
 
     <Button
         android:id="@+id/button19"
-        android:layout_width="421dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="80dp"
-        android:background="@drawable/commun_button"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
 
         android:onClick="goEventActivity5"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/commun_button"
         android:text=""
-        android:textColor="@android:color/holo_purple"
+        android:textColor="#A73D7B"
         android:textSize="18dp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.86" />
+        app:layout_constraintTop_toBottomOf="@+id/button18"
+        tools:layout_editor_absoluteX="0dp" />
 
     <Button
         android:id="@+id/button23"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/call_to_action"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-
         android:onClick="goEventCreateActivity"
+        android:paddingLeft="10dp"
+
+        android:paddingRight="10dp"
         android:text="Créer un évènement"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.504"

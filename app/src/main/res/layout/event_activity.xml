@@ -12,9 +12,9 @@
         android:id="@+id/button8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/commun_button"
         android:onClick="back"
         android:text="Retour"
-        android:background="@drawable/commun_button"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.073"
@@ -45,8 +45,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        android:enabled="false"
         android:background="@drawable/commun_button"
+        android:enabled="false"
 
         android:text="Event"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -94,11 +94,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="80dp"
+        android:padding="10dp"
         android:text=""
         android:textColor="@android:color/black"
         android:textSize="24dp"
         android:textStyle="bold"
-        android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.536"
         app:layout_constraintStart_toStartOf="parent"
@@ -114,7 +114,7 @@
         android:textColor="@android:color/black"
         android:textSize="22dp"
         android:textStyle="normal"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textViewEvenementHeure"
         app:layout_constraintHorizontal_bias="0.151"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewEvenementNom" />
@@ -147,7 +147,6 @@
         android:textStyle="normal"
 
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewEvenementDate" />
 
