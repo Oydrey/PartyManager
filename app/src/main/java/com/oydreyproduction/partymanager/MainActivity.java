@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -105,9 +104,9 @@ public class MainActivity extends AppCompatActivity {
 
         Soiree soiree = soireeDAO.selectionnerSoireeByNom(nom);
 
-        soireeDAO.close();
+        int idSoiree = soireeDAO.getIdBySoiree(soiree);
 
-        int idSoiree = soiree.getId();
+        soireeDAO.close();
 
         Intent intent=new Intent(this,EventActivity.class);
         intent.putExtra("idSoiree", idSoiree);
@@ -124,9 +123,9 @@ public class MainActivity extends AppCompatActivity {
 
         Soiree soiree = soireeDAO.selectionnerSoireeByNom(nom);
 
-        soireeDAO.close();
+        int idSoiree = soireeDAO.getIdBySoiree(soiree);
 
-        int idSoiree = soiree.getId();
+        soireeDAO.close();
 
         Intent intent=new Intent(this,EventActivity.class);
         intent.putExtra("idSoiree", idSoiree);
@@ -143,9 +142,9 @@ public class MainActivity extends AppCompatActivity {
 
         Soiree soiree = soireeDAO.selectionnerSoireeByNom(nom);
 
-        soireeDAO.close();
+        int idSoiree = soireeDAO.getIdBySoiree(soiree);
 
-        int idSoiree = soiree.getId();
+        soireeDAO.close();
 
         Log.v("Je suis la", String.valueOf(idSoiree));
 
@@ -164,9 +163,9 @@ public class MainActivity extends AppCompatActivity {
 
         Soiree soiree = soireeDAO.selectionnerSoireeByNom(nom);
 
-        soireeDAO.close();
+        int idSoiree = soireeDAO.getIdBySoiree(soiree);
 
-        int idSoiree = soiree.getId();
+        soireeDAO.close();
 
         Intent intent=new Intent(this,EventActivity.class);
         intent.putExtra("idSoiree", idSoiree);
@@ -183,9 +182,9 @@ public class MainActivity extends AppCompatActivity {
 
         Soiree soiree = soireeDAO.selectionnerSoireeByNom(nom);
 
-        soireeDAO.close();
+        int idSoiree = soireeDAO.getIdBySoiree(soiree);
 
-        int idSoiree = soiree.getId();
+        soireeDAO.close();
 
         Intent intent=new Intent(this,EventActivity.class);
         intent.putExtra("idSoiree", idSoiree);

@@ -32,19 +32,6 @@ public class ListeProduitDAO extends DAOBase {
         mDb.insert(ListeProduitDAO.TABLE_LISTE_PRODUIT, null, values);
     }
 
-
-    public void supprimer(int idSoiree, int idProduit){
-        mDb.delete(TABLE_LISTE_PRODUIT, COL_FKR_ID_PRODUIT + " = " + idProduit + " AND " + COL_FKR_ID_SOIREE + " = " + idSoiree, null);
-    }
-    /*
-    public void modifier(ListeProduit listeProduit){
-        ContentValues values = new ContentValues();
-        values.put(COL_FKR_ID_PRODUIT, listeProduit.getIdProduit());
-        values.put(COL_FKR_ID_SOIREE, listeProduit.getIdSoiree());
-        mDb.update(TABLE_LISTE_PRODUIT, values, COL_FKR_ID_PRODUIT + " = " + listeProduit.getIdProduit() + " AND " + COL_FKR_ID_SOIREE + " = " + listeProduit.getIdSoiree(), null);
-    }
-    */
-
     public ListeProduit[] selectionnerListeProduitByIDSoiree(int idSoiree){
         Cursor c = mDb.rawQuery("select " + COL_FKR_ID_PRODUIT + " from " + TABLE_LISTE_PRODUIT +
                 " where " + COL_FKR_ID_SOIREE + " = " + idSoiree, null);
