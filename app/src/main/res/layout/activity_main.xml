@@ -29,8 +29,6 @@
         android:layout_marginTop="30dp"
         android:background="@drawable/commun_button"
 
-
-        android:onClick="goEventActivity"
         android:shadowColor="@android:color/black"
         android:text=""
         android:textColor="@android:color/holo_red_dark"
@@ -44,7 +42,6 @@
         android:layout_width="match_parent"
         android:onClick="goEventActivity2"
         android:background="@drawable/commun_button"
-        android:onClick="goEventActivity"
 
         android:text=""
         android:textColor="@android:color/holo_orange_dark"
@@ -59,7 +56,6 @@
         android:layout_height="50dp"
         android:layout_marginTop="35dp"
         android:background="@drawable/commun_button"
-
         android:text=""
         android:textColor="#09244B"
         android:textSize="18dp"
@@ -72,8 +68,6 @@
         android:layout_marginTop="35dp"
         android:onClick="goEventActivity4"
         android:background="@drawable/commun_button"
-
-        android:onClick="goEventActivity"
         android:text=""
         android:textColor="#27650B"
         android:textSize="18dp"
@@ -83,7 +77,6 @@
         android:id="@+id/button19"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-
         android:onClick="goEventActivity5"
         android:layout_marginTop="35dp"
         android:background="@drawable/commun_button"
