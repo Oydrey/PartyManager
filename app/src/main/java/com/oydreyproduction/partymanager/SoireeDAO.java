@@ -32,8 +32,6 @@ public class SoireeDAO extends DAOBase {
     }
 
     public void ajouter(Soiree soiree){
-
-
         ContentValues values = new ContentValues();
         values.put(SoireeDAO.COL_NOM_SOIREE, soiree.getNom());
         values.put(SoireeDAO.COL_LIEU, soiree.getLieu());
@@ -41,20 +39,6 @@ public class SoireeDAO extends DAOBase {
         values.put(SoireeDAO.COL_HEURE, soiree.getHeure());
         values.put(SoireeDAO.COL_DESCRIPTION, soiree.getDescription());
         mDb.insert(SoireeDAO.TABLE_SOIREE, null, values);
-    }
-
-    public void supprimer(int id){
-        mDb.delete(TABLE_SOIREE, COL_ID_SOIREE + " = " + id, null);
-    }
-
-    public void modifier(Soiree soiree){
-        ContentValues values = new ContentValues();
-        values.put(COL_NOM_SOIREE, soiree.getNom());
-        values.put(COL_LIEU, soiree.getLieu());
-        values.put(COL_DATE, soiree.getDate());
-        values.put(COL_HEURE, soiree.getHeure());
-        values.put(COL_DESCRIPTION, soiree.getDescription());
-        mDb.update(TABLE_SOIREE, values, COL_ID_SOIREE + " = " + soiree.getId(), null);
     }
 
     public Soiree selectionnerSoireeByID(int id){
@@ -90,6 +74,21 @@ public class SoireeDAO extends DAOBase {
         }
         else{
             return new Soiree("vide", "", "", "", "");
+        }
+    }
+
+    public int getIdBySoiree(Soiree soiree){
+        String nom = soiree.getNom();
+
+        Cursor c = mDb.rawQuery("select " + COL_ID_SOIREE + " from " + TABLE_SOIREE
+                + " where " + COL_NOM_SOIREE + " = \"" + nom + "\"", null);
+        if(c != null && c.moveToFirst()){
+            int id = c.getInt(0);
+            c.close();
+            return id;
+        }
+        else{
+            return -1;
         }
     }
 

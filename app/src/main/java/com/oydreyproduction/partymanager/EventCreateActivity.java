@@ -99,7 +99,9 @@ public class EventCreateActivity extends AppCompatActivity {
         for(String produit : strProduits){
             if(!(produit.equals(""))){
                 Log.v("Je suis la", "Dans EventCreateActivity, dans for, dans if (ajout produit)");
-                produitDAO.ajouter(new Produit(produit, 1));
+                Produit pProduit = new Produit(produit, 1);
+                produitDAO.ajouter(pProduit);
+                listeProduitDAO.ajouter(produitDAO.getIdByProduit(pProduit), soireeDAO.getIdBySoiree(soiree));
             }
         }
 

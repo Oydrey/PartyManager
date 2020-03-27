@@ -17,14 +17,10 @@ public class Produit{
         this.qteAchetee = 0;
     }
 
-    public Produit(String nom, int qteNecessaire, int qteAchetee){
+    public Produit(String nom, int qteNecessaire, int qteAchetee) {
         this.nom = nom;
         this.qteNecessaire = qteNecessaire;
         this.qteAchetee = qteAchetee;
-    }
-
-    public int getId(){
-        return id;
     }
 
     public String getNom() {
@@ -37,10 +33,6 @@ public class Produit{
 
     public int getQteAchetee() {
         return qteAchetee;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public void setNom(String nom) {

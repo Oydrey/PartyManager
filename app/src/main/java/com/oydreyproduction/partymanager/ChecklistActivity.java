@@ -104,13 +104,12 @@ public class ChecklistActivity extends AppCompatActivity {
         qteAcheteeProduit10 = findViewById(R.id.qtteProduit10);
         qteNecessaireProduit10 = findViewById(R.id.qtteSouhaiteProduit10);
 
+
         ProduitDAO produitDAO = new ProduitDAO(this);
         ListeProduitDAO listeProduitDAO = new ListeProduitDAO(this);
 
         produitDAO.open();
         listeProduitDAO.open();
-
-        Log.v("Je suis la", String.valueOf(idSoiree));
 
         ListeProduit[] listeProduits = listeProduitDAO.selectionnerListeProduitByIDSoiree(idSoiree);
 
@@ -121,8 +120,7 @@ public class ChecklistActivity extends AppCompatActivity {
         int i=0;
 
         for(ListeProduit listeProduit : listeProduits){
-            Log.v("Je suis la", listeProduit.toString());
-            Produit produit = produitDAO.selectionnerProduitByID(listeProduit.getIdProduit());
+            Produit produit = produitDAO.selectionnerProduitByID(listeProduitDAO.getIDProduitWithPos(idSoiree, i));
             nomProduits[i].setText(produit.getNom());
             qteAcheteeProduits[i].setText(String.valueOf(produit.getQteAchetee()));
             qteNecessaireProduits[i].setText(String.valueOf(produit.getQteNecessaire()));
@@ -165,6 +163,68 @@ public class ChecklistActivity extends AppCompatActivity {
 
     public void saveQuantityAndGoMainSellier(View v) {
         // sauvegarder quantité dans BD
+        qteAcheteeProduit1 = findViewById(R.id.qtteProduit1);
+        qteNecessaireProduit1 = findViewById(R.id.qtteSouhaiteProduit1);
+
+        qteAcheteeProduit2 = findViewById(R.id.qtteProduit2);
+        qteNecessaireProduit2 = findViewById(R.id.qtteSouhaiteProduit2);
+
+        qteAcheteeProduit3 = findViewById(R.id.qtteProduit3);
+        qteNecessaireProduit3 = findViewById(R.id.qtteSouhaiteProduit3);
+
+        qteAcheteeProduit4 = findViewById(R.id.qtteProduit4);
+        qteNecessaireProduit4 = findViewById(R.id.qtteSouhaiteProduit4);
+
+        qteAcheteeProduit5 = findViewById(R.id.qtteProduit5);
+        qteNecessaireProduit5 = findViewById(R.id.qtteSouhaiteProduit5);
+
+        qteAcheteeProduit6 = findViewById(R.id.qtteProduit6);
+        qteNecessaireProduit6 = findViewById(R.id.qtteSouhaiteProduit6);
+
+        qteAcheteeProduit7 = findViewById(R.id.qtteProduit7);
+        qteNecessaireProduit7 = findViewById(R.id.qtteSouhaiteProduit7);
+
+        qteAcheteeProduit8 = findViewById(R.id.qtteProduit8);
+        qteNecessaireProduit8 = findViewById(R.id.qtteSouhaiteProduit8);
+
+        qteAcheteeProduit9 = findViewById(R.id.qtteProduit9);
+        qteNecessaireProduit9 = findViewById(R.id.qtteSouhaiteProduit9);
+
+        qteAcheteeProduit10 = findViewById(R.id.qtteProduit10);
+        qteNecessaireProduit10 = findViewById(R.id.qtteSouhaiteProduit10);
+
+        ProduitDAO produitDAO = new ProduitDAO(this);
+        ListeProduitDAO listeProduitDAO = new ListeProduitDAO(this);
+
+        produitDAO.open();
+        listeProduitDAO.open();
+
+        ListeProduit[] listeProduits = listeProduitDAO.selectionnerListeProduitByIDSoiree(idSoiree);
+
+        EditText[] qteAcheteeProduits = {qteAcheteeProduit1, qteAcheteeProduit2, qteAcheteeProduit3, qteAcheteeProduit4, qteAcheteeProduit5, qteAcheteeProduit6, qteAcheteeProduit7, qteAcheteeProduit8, qteAcheteeProduit9, qteAcheteeProduit10};
+        EditText[] qteNecessaireProduits = {qteNecessaireProduit1, qteNecessaireProduit2, qteNecessaireProduit3, qteNecessaireProduit4, qteNecessaireProduit5, qteNecessaireProduit6, qteNecessaireProduit7, qteNecessaireProduit8, qteNecessaireProduit9, qteNecessaireProduit10};
+
+        int i=0;
+
+        for(ListeProduit listeProduit : listeProduits){
+            Produit produit = produitDAO.selectionnerProduitByID(listeProduitDAO.getIDProduitWithPos(idSoiree, i));
+            String qteAchetee = qteAcheteeProduits[i].getText().toString();
+            String qteAcheteeInitial = String.valueOf(produit.getQteAchetee());
+            if(!(qteAchetee.equals(qteAcheteeInitial))){
+                Produit newProduit = new Produit(produit.getNom(), produit.getQteNecessaire(), Integer.parseInt(qteAchetee));
+                produitDAO.modifierQteAchetee(newProduit);
+            }
+            String qteNecessaire = qteNecessaireProduits[i].getText().toString();
+            String qteNecessaireInital = String.valueOf(produit.getQteNecessaire());
+            if(!(qteNecessaire.equals(qteNecessaireInital))){
+                Produit newProduit = new Produit(produit.getNom(), Integer.parseInt(qteNecessaire), produit.getQteAchetee());
+                produitDAO.modifierQteNecessaire(newProduit);
+            }
+            i+=1;
+        }
+
+        produitDAO.close();
+        listeProduitDAO.close();
 
         // redirection sellier
         Intent intent = new Intent(this,SellierActivity.class);

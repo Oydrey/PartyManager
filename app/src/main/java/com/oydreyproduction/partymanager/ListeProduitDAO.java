@@ -32,19 +32,6 @@ public class ListeProduitDAO extends DAOBase {
         mDb.insert(ListeProduitDAO.TABLE_LISTE_PRODUIT, null, values);
     }
 
-
-    public void supprimer(int idSoiree, int idProduit){
-        mDb.delete(TABLE_LISTE_PRODUIT, COL_FKR_ID_PRODUIT + " = " + idProduit + " AND " + COL_FKR_ID_SOIREE + " = " + idSoiree, null);
-    }
-    /*
-    public void modifier(ListeProduit listeProduit){
-        ContentValues values = new ContentValues();
-        values.put(COL_FKR_ID_PRODUIT, listeProduit.getIdProduit());
-        values.put(COL_FKR_ID_SOIREE, listeProduit.getIdSoiree());
-        mDb.update(TABLE_LISTE_PRODUIT, values, COL_FKR_ID_PRODUIT + " = " + listeProduit.getIdProduit() + " AND " + COL_FKR_ID_SOIREE + " = " + listeProduit.getIdSoiree(), null);
-    }
-    */
-
     public ListeProduit[] selectionnerListeProduitByIDSoiree(int idSoiree){
         Cursor c = mDb.rawQuery("select " + COL_FKR_ID_PRODUIT + " from " + TABLE_LISTE_PRODUIT +
                 " where " + COL_FKR_ID_SOIREE + " = " + idSoiree, null);
@@ -52,7 +39,7 @@ public class ListeProduitDAO extends DAOBase {
         int i=0;
         if(c != null){
             for(c.moveToFirst(); !c.isAfterLast(); c.moveToNext()){
-                idProduit[i] = c.getInt(i);
+                idProduit[i] = c.getInt(0);
                 i+=1;
             }
             ListeProduit[] listeProduit = new ListeProduit[10];
@@ -63,6 +50,23 @@ public class ListeProduitDAO extends DAOBase {
         }
         else{
             return null;
+        }
+    }
+
+    public int getIDProduitWithPos(int idSoiree, int pos){
+        Cursor c = mDb.rawQuery("select " + COL_FKR_ID_PRODUIT + " from " + TABLE_LISTE_PRODUIT +
+                " where " + COL_FKR_ID_SOIREE + " = " + idSoiree, null);
+        int[] idProduit = new int[10];
+        int i=0;
+        if(c != null){
+            for(c.moveToFirst(); !c.isAfterLast(); c.moveToNext()){
+                idProduit[i] = c.getInt(0);
+                i+=1;
+            }
+            return idProduit[pos];
+        }
+        else{
+            return -1;
         }
     }
 

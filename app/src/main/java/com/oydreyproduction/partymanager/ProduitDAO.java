@@ -34,16 +34,16 @@ public class ProduitDAO extends DAOBase {
         mDb.insert(ProduitDAO.TABLE_PRODUIT, null, values);
     }
 
-    public void supprimer(int id){
-        mDb.delete(TABLE_PRODUIT, COL_ID_PRODUIT + " = " + id, null);
+    public void modifierQteAchetee(Produit produit){
+        ContentValues values = new ContentValues();
+        values.put(COL_QTE_ACHETEE, produit.getQteAchetee());
+        mDb.update(TABLE_PRODUIT, values, COL_ID_PRODUIT + " = " + this.getIdByProduit(produit), null);
     }
 
-    public void modifier(Produit produit){
+    public void modifierQteNecessaire(Produit produit){
         ContentValues values = new ContentValues();
-        values.put(COL_NOM_PRODUIT, produit.getNom());
         values.put(COL_QTE_NECESSAIRE, produit.getQteNecessaire());
-        values.put(COL_QTE_ACHETEE, produit.getQteAchetee());
-        mDb.update(TABLE_PRODUIT, values, COL_ID_PRODUIT + " = " + produit.getId(), null);
+        mDb.update(TABLE_PRODUIT, values, COL_ID_PRODUIT + " = " + this.getIdByProduit(produit), null);
     }
 
     public Produit selectionnerProduitByID(int id){
@@ -78,6 +78,21 @@ public class ProduitDAO extends DAOBase {
         }
         else{
             return new Produit("vide", 0, 0);
+        }
+    }
+
+    public int getIdByProduit(Produit produit){
+        String nom = produit.getNom();
+
+        Cursor c = mDb.rawQuery("select " + COL_ID_PRODUIT + " from " + TABLE_PRODUIT
+                + " where " + COL_NOM_PRODUIT + " = \"" + nom + "\"", null);
+        if(c != null && c.moveToFirst()){
+            int id = c.getInt(0);
+            c.close();
+            return id;
+        }
+        else{
+            return -1;
         }
     }
 

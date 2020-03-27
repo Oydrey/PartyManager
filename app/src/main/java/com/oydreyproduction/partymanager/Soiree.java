@@ -21,10 +21,6 @@ public class Soiree {
         this.description = description;
     }
 
-    public int getId(){
-        return id;
-    }
-
     public String getNom(){
         return nom;
     }
@@ -43,10 +39,6 @@ public class Soiree {
 
     public String getDescription(){
         return description;
-    }
-
-    public void setId(int id){
-        this.id = id;
     }
 
     public void setNom(String nom){
