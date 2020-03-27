@@ -3,12 +3,19 @@ package com.oydreyproduction.partymanager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class EventActivity extends AppCompatActivity {
 
     int idSoiree = -1;
+
+    TextView nom;
+    TextView date;
+    TextView heure;
+    TextView desc;
+    TextView adresse;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +27,26 @@ public class EventActivity extends AppCompatActivity {
         if(intent != null){
             idSoiree = intent.getIntExtra("idSoiree", 0);
         }
+
+        nom = findViewById(R.id.textViewEvenementNom);
+        date = findViewById(R.id.textViewEvenementDate);
+        heure = findViewById(R.id.textViewEvenementHeure);
+        desc = findViewById(R.id.textViewEvenementDescription);
+        adresse = findViewById(R.id.textViewEvenementAdresse);
+
+        SoireeDAO soireeDAO = new SoireeDAO(this);
+
+        soireeDAO.open();
+
+        Soiree soiree = soireeDAO.selectionnerSoireeByID(idSoiree);
+
+        nom.setText(soiree.getNom());
+        date.setText(soiree.getDate());
+        heure.setText(soiree.getHeure());
+        desc.setText(soiree.getDescription());
+        adresse.setText(soiree.getLieu());
+
+        soireeDAO.close();
     }
 
     public void back(View v) {
