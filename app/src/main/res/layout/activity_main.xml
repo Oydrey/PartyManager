@@ -26,7 +26,7 @@
         android:layout_width="421dp"
         android:layout_height="49dp"
         android:layout_marginTop="80dp"
-        android:background="#fffefa"
+        android:background="@drawable/commun_button"
         android:onClick="goEventActivity"
 
 
@@ -45,7 +45,7 @@
         android:layout_width="421dp"
         android:layout_height="49dp"
         android:layout_marginTop="80dp"
-        android:background="#fffefa"
+        android:background="@drawable/commun_button"
         android:onClick="goEventActivity"
 
         android:text=""
@@ -62,7 +62,7 @@
         android:layout_width="421dp"
         android:layout_height="49dp"
         android:layout_marginTop="80dp"
-        android:background="#fffefa"
+        android:background="@drawable/commun_button"
         android:onClick="goEventActivity"
 
         android:text=""
@@ -79,7 +79,7 @@
         android:layout_width="421dp"
         android:layout_height="49dp"
         android:layout_marginTop="80dp"
-        android:background="#fffefa"
+        android:background="@drawable/commun_button"
         android:onClick="goEventActivity"
 
         android:text=""
@@ -96,7 +96,7 @@
         android:layout_width="421dp"
         android:layout_height="49dp"
         android:layout_marginTop="80dp"
-        android:background="#fffefa"
+        android:background="@drawable/commun_button"
 
         android:onClick="goEventActivity"
         android:text=""
@@ -112,6 +112,9 @@
         android:id="@+id/button23"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/call_to_action"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
 
         android:onClick="goEventCreateActivity"
         android:text="Créer un évènement"

@@ -44,6 +44,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
                             android:layout_alignParentBottom="true"
+                            android:background="@drawable/commun_button"
 
                             android:layout_marginRight="20dp"
                             android:layout_marginBottom="20dp"
@@ -60,7 +61,7 @@
                             android:id="@+id/button25"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
+                            android:background="@drawable/commun_button"
 
                             android:layout_alignParentStart="true"
                             android:layout_alignParentBottom="true"
@@ -295,6 +296,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="20dp"
+                    android:background="@drawable/call_to_action"
 
                     android:onClick="saveEventAndGoMainActivity"
                     android:text="Créer"
